@@ -57,3 +57,5 @@ HTTP checks confirmed home, Research, Projects, About, Photography and Contact r
 Complete: original visual concept; cohesive typography; restrained entrance/scroll/hover/page transitions; evidence-backed content; five responsive widths; keyboard/skip/menu checks; reduced-motion and no-JS checks; internal links/assets; build; three visual passes; deployed HTTPS site; production verification; source and documentation committed. Research repositories were preserved.
 
 Remaining boundaries: approved photographs are absent; Safari/Firefox, physical-device and screen-reader sessions are untested; official Astro Actions automation is prepared but inactive because both existing integrations lack workflow-file write permission. Publishing works through the documented static branch command. No lab-submission claim is made.
+
+Final repeat-publish check: Pages run 39893031207 succeeded. The production source marker matches source commit 0038e1658d6026863589a1512963a1602066587a. SHA-256 checks confirmed the home, both research studies, artwork and both fonts match the final local build. The source working tree was clean before publishing.

@@ -46,3 +46,5 @@ Verified 23 October 2026: [initial successful Pages run 39891414958](https://git
 Earlier automatic runs selected `main` and attempted Jekyll processing of Astro source; logs showed “Invalid YAML front matter” in an Astro component. This was resolved by selecting the compiled `gh-pages` branch with `.nojekyll`. These earlier failures are retained in Actions history for transparency.
 
 The repeatable publishing script is exercised during final handoff. `source-version.txt` on the live site identifies its source commit.
+
+Final publisher verification: `pnpm deploy` completed successfully and preserved the publishing branch history. [Pages run 39893031207](https://github.com/KoreyoshiE/koreyoshie.github.io/actions/runs/39893031207) completed with success. Live `source-version.txt` resolves to `0038e1658d6026863589a1512963a1602066587a`. Home, both research studies, the procedural SVG and both fonts were downloaded from production and their SHA-256 hashes matched the local production build exactly. Later documentation-only commits do not require republishing the site.
