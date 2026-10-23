@@ -3,20 +3,46 @@
 Target: https://koreyoshie.github.io  
 Repository: https://github.com/KoreyoshiE/koreyoshie.github.io
 
-Static user site: Astro `site` is `https://koreyoshie.github.io`; default base `/` is correct because the repository is named `koreyoshie.github.io`. Trailing slash routes map to generated directory index files.
+## Active method: static publishing branch
 
-## Workflow
+GitHub Pages is configured to deploy `/` from the `gh-pages` branch. Astro generates static HTML in `dist/`; `.nojekyll` prevents Jekyll processing. HTTPS is enforced. The user-site repository name means the production base path is `/`; Astro's `site` is `https://koreyoshie.github.io` with trailing-slash routes.
 
-`.github/workflows/deploy.yml` follows the [official Astro Pages guide](https://docs.astro.build/en/guides/deploy/github/): `actions/checkout@v7`, `withastro/action@v6`, Node 24, pnpm 11.25.0, then `actions/deploy-pages@v5`. Required permissions are contents read, pages write, id-token write. A committed pnpm lockfile makes installation reproducible. GitHub Pages source must be GitHub Actions (`build_type: workflow`).
+Source remains on `main`; generated files remain on `gh-pages`. GitHub creates its own **pages build and deployment** Actions run for this branch source. There is no backend or paid service.
 
-## Repeat deployment
+## Reproduce and publish
 
-Push a reviewed change to `main`, or run the workflow manually. Inspect the build and deployment jobs in Actions, then check the live pages and assets. A build alone does not establish deployment. Existing research repositories are outside this workflow.
+With Node 24, pnpm 11.25.0, Git and an authenticated GitHub CLI available on PATH:
 
-## Manual recovery
+```sh
+pnpm install --frozen-lockfile
+pnpm build
+pnpm preview --port 4321
+# In another terminal, complete browser checks:
+pnpm test
+# Commit and push reviewed source changes before publishing:
+git add .
+git commit -m "Describe the change"
+git push origin main
+pnpm deploy
+gh run list --repo KoreyoshiE/koreyoshie.github.io
+```
 
-If Actions fails, inspect the failing step in the repository Actions tab. Reproduce locally with Node 24 and `pnpm install --frozen-lockfile && pnpm build`. Check Pages settings use GitHub Actions. The output is `dist/`; no backend, secret, paid API or custom domain is required.
+`pnpm deploy` rebuilds and runs `scripts/publish.mjs`. The script requires clean committed source, verifies the repository URL, clones the existing publishing branch into a temporary directory, replaces only generated contents, writes the source commit to `source-version.txt`, commits and pushes without force. The temporary directory is removed afterward. It preserves publishing history. Set `GH_PATH` if gh is outside PATH. Do not publish unrelated source or restricted research data.
 
-## Verification record
+A source push alone does **not** publish a new build in this fallback configuration; run `pnpm deploy`. Watch the GitHub-generated Pages run, then verify live routes and assets.
 
-Local build and browser checks passed. Initial deployment is being attempted; live verification and the successful run URL will be added after completion.
+## Official Astro Actions workflow: prepared migration
+
+The requested official [Astro Pages workflow](https://docs.astro.build/en/guides/deploy/github/) is prepared in `docs/examples/deploy.workflow.yml`: checkout v7, withastro/action v6, Node 24, pnpm 11.25.0 and deploy-pages v5, with contents-read/pages-write/id-token-write permissions. Latest action release tags were checked through the original GitHub repositories.
+
+The initial CLI push was rejected: “refusing to allow an OAuth App to create or update workflow … without workflow scope.” The CLI's existing token grants repo but not workflow. A write through the connected GitHub app also returned HTTP 403 “Resource not accessible by integration.” No token was requested or exposed; no security permission was expanded. Only the unpublished website refinement commit was amended to store the workflow as an example. Existing research histories were untouched.
+
+To switch later, use an account session permitted to write workflow files, copy the example to `.github/workflows/deploy.yml`, switch Settings → Pages → Source to GitHub Actions, and push to main. This is optional; it is not required to view the branch-deployed site.
+
+## Deployment verification
+
+Verified 23 October 2026: [initial successful Pages run 39891414958](https://github.com/KoreyoshiE/koreyoshie.github.io/actions/runs/39891414958), with successful build and deploy jobs. API reports `built`, `gh-pages:/`, HTTPS enforced. Live URL returns the reviewed portfolio. Production Playwright suite: 31/31 passed; all five production screenshot sizes have no overflow or page errors. See QA_REPORT.md and screenshots.
+
+Earlier automatic runs selected `main` and attempted Jekyll processing of Astro source; logs showed “Invalid YAML front matter” in an Astro component. This was resolved by selecting the compiled `gh-pages` branch with `.nojekyll`. These earlier failures are retained in Actions history for transparency.
+
+The repeatable publishing script is exercised during final handoff. `source-version.txt` on the live site identifies its source commit.

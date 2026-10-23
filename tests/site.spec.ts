@@ -65,7 +65,14 @@ for (const width of [1440, 375]) {
       await page.goto(route);
       await page.waitForTimeout(1000);
       const scan = await new AxeBuilder({ page })
-        .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+        .withTags([
+          "wcag2a",
+          "wcag2aa",
+          "wcag21a",
+          "wcag21aa",
+          "wcag22a",
+          "wcag22aa",
+        ])
         .analyze();
       expect(scan.violations).toEqual([]);
     });

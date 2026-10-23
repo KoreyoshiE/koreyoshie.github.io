@@ -1,6 +1,6 @@
 # Han Che · Research & software
 
-Personal academic portfolio: **https://koreyoshie.github.io**  
+Verified live personal academic portfolio: **https://koreyoshie.github.io**  
 Source: **https://github.com/KoreyoshiE/koreyoshie.github.io**
 
 A researcher's notebook meets a cinematic digital exhibition. Built with Astro 7, TypeScript, custom CSS and GSAP. Static HTML carries all essential content. Self-hosted Newsreader and Manrope fonts, original procedural SVG artwork, cited research summaries, native disclosures and a no-JavaScript year-split explanation.
@@ -18,6 +18,8 @@ pnpm build
 pnpm preview --port 4321
 ```
 
+To publish a committed source change, run `pnpm deploy`; see [deployment details](docs/DEPLOYMENT.md).
+
 For the browser suite, keep preview running on port 4321 and run `pnpm test`. It uses installed Chrome on macOS by default. Set `CHROME_PATH` to another installed Chrome/Chromium binary on other machines; set `SITE_URL` for production verification. `node qa-capture.mjs pass3` captures the five documented viewport sizes; `node qa-detail.mjs` captures reading pages locally. `pnpm format:check` checks source formatting.
 
 ## Structure and maintenance
@@ -28,19 +30,19 @@ For the browser suite, keep preview running on port 4321 and run `pnpm test`. It
 - `src/scripts/site.ts`: GSAP opening and bounded desktop scroll drift, mobile Escape handling.
 - `src/data/photographs.ts`: approved photograph manifest; intentionally empty. Add local optimized originals with dimensions, meaningful alt text, captions and publication permission. Images link to the original image; no lightbox dependency is needed.
 - `docs/`: rationale, provenance, skills, QA evidence and deployment guide.
-- `.github/workflows/deploy.yml`: official Astro build/upload and GitHub Pages deployment.
+- `scripts/publish.mjs`: reproducible static publishing branch deployment; `docs/examples/deploy.workflow.yml`: official Astro Actions migration option.
 
 Update scientific statements against original repository evidence and revise CONTENT_PROVENANCE.md. Do not turn manuscript status into acceptance or imply the Shanghai weather catalogue represents all seasons equally. Do not publish restricted data or redistribute unlicensed research figures.
 
 ## CSI205TC Week 6 Lab · Part 2 evidence
 
-| Evidence                 | Location                                                                      |
-| ------------------------ | ----------------------------------------------------------------------------- |
-| Repository / source code | https://github.com/KoreyoshiE/koreyoshie.github.io · `src/`                   |
-| Website URL              | https://koreyoshie.github.io                                                  |
-| Deployment method        | GitHub Pages via official `withastro/action@v6` and `actions/deploy-pages@v5` |
-| Screenshots              | [Visual QA captures](docs/screenshots/)                                       |
-| Verification             | [QA report](docs/QA_REPORT.md), [deployment record](docs/DEPLOYMENT.md)       |
+| Evidence                 | Location                                                                                              |
+| ------------------------ | ----------------------------------------------------------------------------------------------------- |
+| Repository / source code | https://github.com/KoreyoshiE/koreyoshie.github.io · `src/`                                           |
+| Website URL              | https://koreyoshie.github.io                                                                          |
+| Deployment method        | GitHub Pages from the `gh-pages` static publishing branch (workflow credential limitation documented) |
+| Screenshots              | [Visual QA captures](docs/screenshots/)                                                               |
+| Verification             | [QA report](docs/QA_REPORT.md), [deployment record](docs/DEPLOYMENT.md)                               |
 
 AI-assisted development was authorized in the task brief. This section records evidence; it does not claim the lab has been formally submitted.
 

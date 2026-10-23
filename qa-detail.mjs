@@ -1,4 +1,5 @@
 import { chromium } from "@playwright/test";
+const pass = process.argv[2] || "pass3";
 const browser = await chromium.launch({
   executablePath:
     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
@@ -18,7 +19,7 @@ for (const width of [1440, 390]) {
       waitUntil: "networkidle",
     });
     await page.screenshot({
-      path: `docs/screenshots/pass2-${route.replaceAll("/", "-")}-${width}.png`,
+      path: `docs/screenshots/${pass}-${route.replaceAll("/", "-")}-${width}.png`,
       fullPage: true,
     });
   }
