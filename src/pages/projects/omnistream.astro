@@ -1,4 +1,70 @@
 ---
-import Study from '../../layouts/Study.astro';
+import Study from "../../layouts/Study.astro";
 ---
-<Study title="OmniStream Database Project" kind="Projects" status="Database design / Coursework" repo="OmniStream-Database-System" deck="A PostgreSQL coursework project that works through the structure and behaviour of a video-streaming database."><div class="study-grid"><aside><p>Focus</p><span>Relational design<br/>Analytical SQL<br/>Transactions</span></aside><div class="prose"><h2>Make the relationships explicit.</h2><p>The schema covers users, plans, subscriptions, payments, invoices, movies, genres, watchlists, viewing history and reviews. Keys and constraints establish relationships; seed data supplies an inspection environment.</p><p>The SQL explores joins, aggregation and JSONB metadata, including a GIN index. The design report discusses normalization. No measured performance study is included, so the index is presented as an implementation choice rather than a proven speedup.</p><h2>A failure with a purpose.</h2><p>A deliberately invalid invoice insert demonstrates a foreign-key failure and transaction rollback. That example is not a production migration. The ordered DDL and seed scripts provide the clearer route to recreating an example database.</p><details><summary>Repository structure</summary><div><p><code>sql/DDL.sql</code> defines tables and constraints; <code>sql/DML.sql</code> supplies example data; <code>sql/DQL_and_TCL.sql</code> contains analytics, index creation and the rollback demonstration. Reports and editable diagrams are under <code>docs/</code>.</p></div></details><div class="limitation"><h3>Scope</h3><p>This is coursework, not a deployed streaming platform. The checked-in backup's restoration has not been independently verified here. No production scale, latency or commercial use is claimed.</p></div><a class="next-study" href="/projects/agent-router/"><small>Next project</small><span>Huawei LLM Agent Router ↗</span></a></div></div></Study>
+
+<Study
+  title="OmniStream Database Project"
+  kind="Projects"
+  status="Database design / Coursework"
+  repo="OmniStream-Database-System"
+  deck="A PostgreSQL coursework project that works through the structure and behaviour of a video-streaming database."
+>
+  <div class="study-grid">
+    <aside>
+      <p>Focus</p>
+      <span>
+        Relational design
+        <br />
+        Analytical SQL
+        <br />
+        Transactions
+      </span>
+    </aside>
+    <div class="prose">
+      <h2>Make the relationships explicit.</h2>
+      <p>
+        The schema covers users, plans, subscriptions, payments, invoices,
+        movies, genres, watchlists, viewing history and reviews. Keys and
+        constraints establish relationships; seed data supplies an inspection
+        environment.
+      </p>
+      <p>
+        The SQL explores joins, aggregation and JSONB metadata, including a GIN
+        index. The design report discusses normalization. No measured
+        performance study is included, so the index is presented as an
+        implementation choice rather than a proven speedup.
+      </p>
+      <h2>A failure with a purpose.</h2>
+      <p>
+        A deliberately invalid invoice insert demonstrates a foreign-key failure
+        and transaction rollback. That example is not a production migration.
+        The ordered DDL and seed scripts provide the clearer route to recreating
+        an example database.
+      </p>
+      <details>
+        <summary>Repository structure</summary>
+        <div>
+          <p>
+            <code>sql/DDL.sql</code> defines tables and constraints;{" "}
+            <code>sql/DML.sql</code> supplies example data;{" "}
+            <code>sql/DQL_and_TCL.sql</code> contains analytics, index creation
+            and the rollback demonstration. Reports and editable diagrams are
+            under <code>docs/</code>.
+          </p>
+        </div>
+      </details>
+      <div class="limitation">
+        <h3>Scope</h3>
+        <p>
+          This is coursework, not a deployed streaming platform. The checked-in
+          backup's restoration has not been independently verified here. No
+          production scale, latency or commercial use is claimed.
+        </p>
+      </div>
+      <a class="next-study" href="/projects/agent-router/">
+        <small>Next project</small>
+        <span>Huawei LLM Agent Router&nbsp;↗</span>
+      </a>
+    </div>
+  </div>
+</Study>

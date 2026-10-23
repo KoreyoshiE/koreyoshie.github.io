@@ -1,4 +1,21 @@
 ---
-const {class:className=''}=Astro.props;
+const { class: className = "" } = Astro.props;
 ---
-<figure class:list={['flow-plate',className]}><img src="/art/atmosphere.svg" alt="" width="800" height="800" fetchpriority="high"/><div class="plate-title"><span>Studies in observation</span><span aria-hidden="true">+ &nbsp; +</span></div><figcaption><span>Atmosphere / computational drawing</span><span>Illustrative, not measured data</span></figcaption></figure>
+
+<figure class:list={["flow-plate", className]}>
+  <img
+    src="/art/atmosphere.svg"
+    alt=""
+    width="800"
+    height="800"
+    fetchpriority="high"
+  />
+  <div class="plate-title">
+    <span>Studies in observation</span>
+    <span aria-hidden="true">+ &nbsp; +</span>
+  </div>
+  <figcaption>
+    <span>Atmosphere / computational drawing</span>
+    <span>Illustrative, not measured data</span>
+  </figcaption>
+</figure>

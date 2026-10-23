@@ -1,6 +1,52 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Pipeline from '../../components/Pipeline.astro';
-import OzoneChart from '../../components/OzoneChart.astro';
+import Layout from "../../layouts/Layout.astro";
+import Pipeline from "../../components/Pipeline.astro";
+import OzoneChart from "../../components/OzoneChart.astro";
 ---
-<Layout title="Research — Han Che"><div class="wrap page-heading"><p class="section-kicker">Research notebook</p><h1>Evidence before<br/>certainty.</h1><p class="page-deck">Atmospheric data, machine learning and the software that connects a question to a reproducible result.</p></div><section class="wrap research-index"><article><div class="index-intro"><h2><a href="/research/wdcgg/">WDCGG Data Pipeline</a></h2><p>Traceable acquisition, quality control and observed-only analysis of long-term CO₂ and CH₄ records.</p><a class="text-link" href="/research/wdcgg/">Read the study ↗</a></div><Pipeline/></article><article><div class="index-intro"><h2><a href="/research/shanghai-ozone/">Shanghai Ozone ML</a></h2><p>Repeated weather typing, frozen-catalogue projection and leave-one-year-out prediction across 2021–2025.</p><a class="text-link" href="/research/shanghai-ozone/">Read the study ↗</a></div><OzoneChart/></article></section></Layout>
+
+<Layout title="Research — Han Che">
+  <div class="wrap page-heading">
+    <p class="section-kicker">Research notebook</p>
+    <h1>
+      Evidence before
+      <br />
+      certainty.
+    </h1>
+    <p class="page-deck">
+      Atmospheric data, machine learning and the software that connects a
+      question to a reproducible result.
+    </p>
+  </div>
+  <section class="wrap research-index">
+    <article>
+      <div class="index-intro">
+        <h2>
+          <a href="/research/wdcgg/">WDCGG Data Pipeline</a>
+        </h2>
+        <p>
+          Traceable acquisition, quality control and observed-only analysis of
+          long-term CO₂ and CH₄ records.
+        </p>
+        <a class="text-link" href="/research/wdcgg/">
+          Read the study ↗
+        </a>
+      </div>
+      <Pipeline />
+    </article>
+    <article>
+      <div class="index-intro">
+        <h2>
+          <a href="/research/shanghai-ozone/">Shanghai Ozone ML</a>
+        </h2>
+        <p>
+          Repeated weather typing, frozen-catalogue projection and
+          leave-one-year-out prediction across 2021–2025.
+        </p>
+        <a class="text-link" href="/research/shanghai-ozone/">
+          Read the study ↗
+        </a>
+      </div>
+      <OzoneChart />
+    </article>
+  </section>
+</Layout>

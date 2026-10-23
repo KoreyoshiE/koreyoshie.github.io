@@ -1,4 +1,90 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from "../../layouts/Layout.astro";
 ---
-<Layout title="Projects — Han Che"><section class="wrap page-heading"><p class="section-kicker">Software & engineering</p><h1>Working through<br/>the details.</h1><p class="page-deck">Selected competition work, database coursework and a small engineering artifact archive. Each has a different scope.</p></section><section class="wrap project-index"><article class="project-block router"><div class="code-visual" aria-label="Conceptual routing workflow"><span>Request</span><i aria-hidden="true">↓</i><span>Category → tool</span><i aria-hidden="true">↓</i><span class="code-end">Proposed call</span><small>Illustrative workflow · no device execution</small></div><div><p class="project-type">Competition exploration</p><h2><a href="/projects/agent-router/">Huawei LLM<br/>Agent Router</a></h2><p>Direct and two-stage Qwen3 prompting for Chinese-language tool selection, with a clear distinction between naming a function and producing correct arguments.</p><a class="text-link" href="/projects/agent-router/">Inside the project ↗</a></div></article><article class="project-block"><div class="schema-visual" aria-label="Conceptual database relationships"><span>Users</span><span>Subscriptions</span><span>Movies</span><span>Viewing history</span><small>Conceptual schema excerpt</small></div><div><p class="project-type">PostgreSQL coursework</p><h2><a href="/projects/omnistream/">OmniStream<br/>Database Project</a></h2><p>A relational foundation for a streaming service: keys, constraints, JSONB, analytical queries and a deliberate transaction rollback.</p><a class="text-link" href="/projects/omnistream/">Inside the project ↗</a></div></article><article class="artifact-note"><p class="project-type">Engineering artifact</p><h2>FSAE 2026 steering materials</h2><p>The public archive contains a steering-wheel design PDF from XJTLU Formula Racing. It is a small artifact archive; the public evidence does not establish a complete steering-system package or validated engineering outcome.</p><a class="text-link" href="https://github.com/KoreyoshiE/FSAE-2026-Steering-System">View the public archive ↗</a></article></section></Layout>
+
+<Layout title="Projects — Han Che">
+  <section class="wrap page-heading">
+    <p class="section-kicker">Software & engineering</p>
+    <h1>
+      Working through
+      <br />
+      the details.
+    </h1>
+    <p class="page-deck">
+      Selected competition work, database coursework and a small engineering
+      artifact archive. Each has a different scope.
+    </p>
+  </section>
+  <section class="wrap project-index">
+    <article class="project-block router">
+      <div class="code-visual" aria-label="Conceptual routing workflow">
+        <span>Request</span>
+        <i aria-hidden="true">↓</i>
+        <span>Category → tool</span>
+        <i aria-hidden="true">↓</i>
+        <span class="code-end">Proposed call</span>
+        <small>Illustrative workflow · no device execution</small>
+      </div>
+      <div>
+        <p class="project-type">Competition exploration</p>
+        <h2>
+          <a href="/projects/agent-router/">
+            Huawei LLM
+            <br />
+            Agent Router
+          </a>
+        </h2>
+        <p>
+          Direct and two-stage Qwen3 prompting for Chinese-language tool
+          selection, with a clear distinction between naming a function and
+          producing correct arguments.
+        </p>
+        <a class="text-link" href="/projects/agent-router/">
+          Inside the project ↗
+        </a>
+      </div>
+    </article>
+    <article class="project-block">
+      <div class="schema-visual" aria-label="Conceptual database relationships">
+        <span>Users</span>
+        <span>Subscriptions</span>
+        <span>Movies</span>
+        <span>Viewing history</span>
+        <small>Conceptual schema excerpt</small>
+      </div>
+      <div>
+        <p class="project-type">PostgreSQL coursework</p>
+        <h2>
+          <a href="/projects/omnistream/">
+            OmniStream
+            <br />
+            Database Project
+          </a>
+        </h2>
+        <p>
+          A relational foundation for a streaming service: keys, constraints,
+          JSONB, analytical queries and a deliberate transaction rollback.
+        </p>
+        <a class="text-link" href="/projects/omnistream/">
+          Inside the project ↗
+        </a>
+      </div>
+    </article>
+    <article class="artifact-note">
+      <p class="project-type">Engineering artifact</p>
+      <h2>FSAE 2026 steering materials</h2>
+      <p>
+        The public archive contains a steering-wheel design PDF from XJTLU
+        Formula Racing. It is a small artifact archive; the public evidence does
+        not establish a complete steering-system package or validated
+        engineering outcome.
+      </p>
+      <a
+        class="text-link"
+        href="https://github.com/KoreyoshiE/FSAE-2026-Steering-System"
+      >
+        View the public archive ↗
+      </a>
+    </article>
+  </section>
+</Layout>

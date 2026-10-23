@@ -1,5 +1,24 @@
 ---
-import Layout from './Layout.astro';
-const {title,kind,deck,repo,status}=Astro.props;
+import Layout from "./Layout.astro";
+const { title, kind, deck, repo, status } = Astro.props;
 ---
-<Layout title={`${title} — Han Che`} description={deck}><article class="study wrap"><header class="study-heading"><a class="back-link" href={kind==='Research'?'/research/':'/projects/'}>← {kind} index</a><p class="section-kicker">{status}</p><h1>{title}</h1><p class="page-deck">{deck}</p><a class="text-link" href={`https://github.com/KoreyoshiE/${repo}`}>Source repository ↗</a></header><slot/></article></Layout>
+
+<Layout title={`${title} — Han Che`} description={deck}>
+  <article class="study wrap">
+    <header class="study-heading">
+      <a
+        class="back-link"
+        href={kind === "Research" ? "/research/" : "/projects/"}
+      >
+        ← {kind} index
+      </a>
+      <p class="section-kicker">{status}</p>
+      <h1>{title}</h1>
+      <p class="page-deck">{deck}</p>
+      <a class="text-link" href={`https://github.com/KoreyoshiE/${repo}`}>
+        Source repository ↗
+      </a>
+    </header>
+    <slot />
+  </article>
+</Layout>

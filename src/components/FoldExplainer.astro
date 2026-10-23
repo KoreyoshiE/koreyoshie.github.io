@@ -1,0 +1,37 @@
+---
+const years = [2021, 2022, 2023, 2024, 2025];
+---
+
+<fieldset class="fold-explainer">
+  <legend>Inspect a held-out year</legend>
+  <div class="fold-controls">
+    {years.map((year) => (
+      <label class="fold-choice">
+        <input
+          type="radio"
+          name="held-out-year"
+          value={year}
+          checked={year === 2025}
+        />
+        {year}
+      </label>
+    ))}
+  </div>
+  <div class="fold-grid" aria-label="Training and test years">
+    {years.map((year) => (
+      <span data-year={year}>
+        <b>{year}</b>
+        <small class="train-label">Train</small>
+        <small class="test-label">Test</small>
+      </span>
+    ))}
+  </div>
+  <p class="fold-note">
+    Choose a year to see the predictor-model split. Four years fit the model;
+    the remaining year tests its predictions. This is a method illustration, not
+    a new model run.
+  </p>
+  <p class="fold-fallback">
+    The selected year is the test year; all other years are training years.
+  </p>
+</fieldset>

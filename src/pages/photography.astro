@@ -1,5 +1,58 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { photographs } from '../data/photographs';
+import Layout from "../layouts/Layout.astro";
+import { photographs } from "../data/photographs";
 ---
-<Layout title="Photography — Han Che"><section class="wrap page-heading"><p class="section-kicker">Photography & visual storytelling</p><h1>Another way<br/>to pay attention.</h1><p class="page-deck">A space for photographs, sequences and the small details that ask for a second look.</p></section><section class="wrap photo-archive" aria-label="Photography archive">{photographs.length ? <div class="photo-grid">{photographs.map(photo=><figure><a href={photo.src}><img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="lazy"/></a><figcaption><h2>{photo.title}</h2><p>{photo.caption}</p></figcaption></figure>)}</div> : <div class="empty-archive"><div class="viewfinder" aria-hidden="true"><span></span></div><div><h2>The archive is still taking shape.</h2><p>No photographs have been published here yet. This space is reserved for my own work, with captions and context.</p><a class="text-link" href="/research/">In the meantime, explore the research ↗</a></div></div>}</section></Layout>
+
+<Layout title="Photography — Han Che">
+  <section class="wrap page-heading">
+    <p class="section-kicker">Photography & visual storytelling</p>
+    <h1>
+      Another way
+      <br />
+      to pay attention.
+    </h1>
+    <p class="page-deck">
+      A space for photographs, sequences and the small details that ask for a
+      second look.
+    </p>
+  </section>
+  <section class="wrap photo-archive" aria-label="Photography archive">
+    {photographs.length ? (
+      <div class="photo-grid">
+        {photographs.map((photo) => (
+          <figure>
+            <a href={photo.src}>
+              <img
+                src={photo.src}
+                alt={photo.alt}
+                width={photo.width}
+                height={photo.height}
+                loading="lazy"
+              />
+            </a>
+            <figcaption>
+              <h2>{photo.title}</h2>
+              <p>{photo.caption}</p>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    ) : (
+      <div class="empty-archive">
+        <div class="viewfinder" aria-hidden="true">
+          <span></span>
+        </div>
+        <div>
+          <h2>The archive is still taking shape.</h2>
+          <p>
+            No photographs have been published here yet. This space is reserved
+            for my own work, with captions and context.
+          </p>
+          <a class="text-link" href="/research/">
+            In the meantime, explore the research ↗
+          </a>
+        </div>
+      </div>
+    )}
+  </section>
+</Layout>

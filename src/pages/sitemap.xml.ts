@@ -1,2 +1,6 @@
-import type { APIRoute } from 'astro';
-export const GET: APIRoute = () => new Response(`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${['','research/','research/wdcgg/','research/shanghai-ozone/','projects/','projects/agent-router/','projects/omnistream/','about/','photography/','contact/'].map(p=>`<url><loc>https://koreyoshie.github.io/${p}</loc></url>`).join('')}</urlset>`,{headers:{'Content-Type':'application/xml'}});
+import type { APIRoute } from "astro";
+export const GET: APIRoute = () =>
+  new Response(
+    `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${["", "research/", "research/wdcgg/", "research/shanghai-ozone/", "projects/", "projects/agent-router/", "projects/omnistream/", "about/", "photography/", "contact/"].map((p) => `<url><loc>https://koreyoshie.github.io/${p}</loc></url>`).join("")}</urlset>`,
+    { headers: { "Content-Type": "application/xml" } },
+  );

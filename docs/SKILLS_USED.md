@@ -1,0 +1,25 @@
+# Skills and tools used
+
+## Discovery and review
+
+Inspected the available Codex skill catalogue and local skill directories before production UI work. No requested third-party design skills were initially installed. Checked the official skills.sh listings and original publisher SKILL.md files, not repackaged copies. Reviewed the Codex skill-installer Python helper before running it; it downloads/copies skill directories and validates paths. No provider installation shell script was executed and no credentials or private repository contents were transmitted to skill providers.
+
+| Skill                       | Verification / installation                                                                                                      | Contribution                                                                                                                                                                                                         |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| skill-installer             | Built-in Codex system skill; inspected helper                                                                                    | Supported GitHub installation mechanism                                                                                                                                                                              |
+| frontend-design             | https://skills.sh/anthropics/skills/frontend-design ; `anthropics/skills`, `skills/frontend-design/SKILL.md`                     | Installed and read; two concepts before code; subject-led typography, one memorable visual, rejection of templated layouts; screenshot critique                                                                      |
+| ui-ux-pro-max               | https://skills.sh/nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max ; `.claude/skills/ui-ux-pro-max/SKILL.md`                   | Installed with its local data/scripts; queried design-system, Astro static content, keyboard focus and reduced-motion. Adopted accessibility/stack guidance; rejected generic hero/features and default font pairing |
+| web-design-guidelines       | https://skills.sh/vercel-labs/agent-skills/web-design-guidelines ; `skills/web-design-guidelines/SKILL.md`                       | Installed/read; fetched fresh original `vercel-labs/web-interface-guidelines/main/command.md` for final source audit                                                                                                 |
+| agent-browser               | https://skills.sh/vercel-labs/agent-browser/agent-browser ; original `skills/agent-browser/SKILL.md` reviewed                    | Considered, not installed: existing computer-use browser plus explicitly requested Playwright provide rendered inspection, viewport capture and repeatable tests without another browser runtime                     |
+| vercel-react-best-practices | https://skills.sh/vercel-labs/agent-skills/vercel-react-best-practices ; original `skills/react-best-practices/SKILL.md` checked | Not installed/applied: no React components or hydration runtime                                                                                                                                                      |
+| Sites                       | Available bundled skill inspected                                                                                                | Local preview/design workflow considered; user-requested Astro/GitHub Pages overrides Sites hosting and starter defaults. No parallel Sites deployment was created                                                   |
+
+Installed skills became available automatically during this conversation. They are also available on subsequent turns; no restart prevented development. The task was completed through one agent using the multidisciplinary roles in the brief.
+
+## Tools
+
+macOS Darwin; bundled Node 24.19.0; pnpm 11.25.0; Git; Homebrew GitHub CLI authenticated through existing keychain; Python for safe source/document generation; native Codex in-app browser for design reference inspection; Playwright against installed Chrome for local and production QA; axe-core accessibility scans. Public repository reads used authenticated GitHub API after anonymous API rate limits. No research repository mutations.
+
+## Design references vs instructions
+
+Skills supplied guidance, not source templates. The live reference sites and technical docs are linked in DESIGN_RESEARCH.md and MOTION_SPEC.md. User preferences overrode generic skill defaults (for example first-person personal copy and the specified restrained cinematic treatment).
